@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2rem 4rem;
+  margin: auto 4rem;
 }
 .pokemons-names__item {
   margin: 0.8rem;
