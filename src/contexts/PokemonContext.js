@@ -43,6 +43,26 @@ const PokemonContextProvider = (props) => {
     });
   }
 
+  // sorting Pokemon
+  const sortAZ= () => {
+    const sortedAZ = currentPageResults.sort((a, b) => a.name > b.name ? 1 : -1);
+    setCurrentPageResults([...sortedAZ]);
+  }
+
+  const sortZA= () => {
+    const sortedZA = currentPageResults.sort((a, b) => a.name > b.name ? -1 : 1);
+    setCurrentPageResults([...sortedZA]);
+  }
+
+  const handleSortFilterChange = (chosenFilter) => {
+    if (chosenFilter === 'a-z') {
+      sortAZ()
+    }
+    if (chosenFilter === 'z-a') {
+      sortZA()
+    }
+  }
+
   return (
     <PokemonContext.Provider
       value={{
@@ -53,6 +73,7 @@ const PokemonContextProvider = (props) => {
         currentPageResults,
         allPokemonCount,
         updatePokemonResults,
+        handleSortFilterChange
 
       }}
     >
