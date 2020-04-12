@@ -1,0 +1,22 @@
+.pokemons-names__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 1.5rem;
+  width: 12rem;
+  height: 16rem;
+}
+.single-pokemon__img {
+  max-height: 8rem;
+  margin: 0.5rem;
+  object-fit: contain;
+}
+.single-pokemon__btn {
+  width: fit-content;
+  padding: 0.3rem 0.8rem;
+}
+.single-pokemon__name {
+  font-family: 'Permanent Marker', cursive;
+}

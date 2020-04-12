@@ -1,0 +1,14 @@
+.pokemons-names__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 4rem;
+}
+.pokemons-names__item {
+  margin: 0.8rem;
+}
+.no-pokemon__img {
+  height: 15rem;
+  margin: 2rem;
+  margin-right: 0rem;
+}
