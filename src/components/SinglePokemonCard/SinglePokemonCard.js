@@ -22,7 +22,7 @@ const SinglePokemonCard = ({ name }) => {
             console.log('fetching pokemon details error', err)
         });
     }
-  }, []);
+  }, [name]);
 
   return (
     <li className='pokemons-names__item'>

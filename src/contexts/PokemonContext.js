@@ -8,6 +8,8 @@ const PokemonContextProvider = (props) => {
   const [ limitValue, setLimitValue ] = useState(10);
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ currentPageResults, setCurrentPageResults ] = useState([]);
+  const [ allPokemonCount, setAllPokemonCount ] = useState(0);
+
 
   useEffect(() => {
 
@@ -15,11 +17,31 @@ const PokemonContextProvider = (props) => {
       .then(res => res.json())
       .then(data => {
         setCurrentPageResults(data.results);
+        setAllPokemonCount(data.count);
       })
       .catch((err) => console.log('fetching error', err))
 
   }, [currentPage, limitValue]);
 
+
+  const updatePokemonResults = (direction) => {
+    setCurrentPage((c) => {
+      if (direction === 'prev') {
+        const firstPage = 1;
+        if (c - 1 <= firstPage) {
+          return firstPage;
+        }
+        return c - 1;
+      }
+      if (direction === 'next') {
+        const lastPage = Math.ceil(allPokemonCount / limitValue);
+        if (c + 1 >= lastPage) {
+          return lastPage;
+        }
+        return c + 1;
+      }
+    });
+  }
 
   return (
     <PokemonContext.Provider
@@ -28,7 +50,9 @@ const PokemonContextProvider = (props) => {
         setPokemonCache,
         limitValue,
         currentPage,
-        currentPageResults
+        currentPageResults,
+        allPokemonCount,
+        updatePokemonResults,
 
       }}
     >

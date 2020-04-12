@@ -1,0 +1,19 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 30rem;
+  margin: 2rem auto auto auto;
+  padding-bottom: 2rem;
+}
+.pagination__heading {
+  margin: 0 1rem;
+}
+.pagination__current-page {
+  color: #e63950;
+  font-weight: bold;
+}
+.pagination__btn {
+  width: 3rem;
+  cursor: pointer;
+}
