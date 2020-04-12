@@ -1,0 +1,14 @@
+.filter-pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 3rem auto;
+}
+
+@media screen and (min-width: 772px) {
+  .filter-pokemon {
+    max-width: 60rem;
+    flex-direction: row;
+  }
+}

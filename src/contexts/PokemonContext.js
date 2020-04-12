@@ -9,6 +9,8 @@ const PokemonContextProvider = (props) => {
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ currentPageResults, setCurrentPageResults ] = useState([]);
   const [ allPokemonCount, setAllPokemonCount ] = useState(0);
+  const [ nameInputValue, setNameInputValue ] = useState('');
+
 
 
   useEffect(() => {
@@ -73,7 +75,9 @@ const PokemonContextProvider = (props) => {
         currentPageResults,
         allPokemonCount,
         updatePokemonResults,
-        handleSortFilterChange
+        handleSortFilterChange,
+        nameInputValue,
+        setNameInputValue
 
       }}
     >

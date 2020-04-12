@@ -3,24 +3,33 @@ import { PokemonContext } from '../../contexts/PokemonContext';
 import SinglePokemonCard from '../SinglePokemonCard/SinglePokemonCard';
 import noPokemonFound from '../../assets/no-pokemon-found.svg';
 import Pagination from '../Pagination/Pagination';
-import SortPokemon from '../SortPokemon/SortPokemon';
 import './PokemonPage.css';
+import FilterSection from '../FilterSection/FilterSection';
 
 const PokemonPage = () => {
 
-  const { currentPageResults } = useContext(PokemonContext);
+  const { currentPageResults, nameInputValue } = useContext(PokemonContext);
+
+  let filteredPokemon = [];
+
+  if (nameInputValue === '') {
+    filteredPokemon = currentPageResults;
+  }
+  if (nameInputValue) {
+    filteredPokemon = currentPageResults.filter(pokemon => pokemon.name.toLowerCase().includes(nameInputValue.toLowerCase()))
+  }
 
   return (
     <section className='pokemons__page'>
-      <SortPokemon />
+      <FilterSection />
       <Pagination />
       <div className='pokemons-names__wrapper'>
         <ul className='pokemons-names__list'>
           {
-            currentPageResults &&
-            currentPageResults.length > 0
+            filteredPokemon &&
+            filteredPokemon.length > 0
               ? (
-                currentPageResults.map(({ name }) => (
+                filteredPokemon.map(({ name }) => (
                   <SinglePokemonCard
                     key={name}
                     name={name}
