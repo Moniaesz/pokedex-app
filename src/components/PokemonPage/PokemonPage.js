@@ -12,26 +12,28 @@ const PokemonPage = () => {
   return (
     <section className='pokemons__page'>
       <Pagination />
-      <ul className='pokemons-names__list'>
-        {
-          currentPageResults &&
-          currentPageResults.length > 0
-            ? (
-              currentPageResults.map(({ name }) => (
-                <SinglePokemonCard
-                  key={name}
-                  name={name}
-                />
-              ))
-            )
-            : (
-              <div>
-                <h3>No Pokemon found. Type something different.</h3>
-                <img src={noPokemonFound} className='no-pokemon__img'/>
-              </div>
-            )
-          }
-      </ul>
+      <div className='pokemons-names__wrapper'>
+        <ul className='pokemons-names__list'>
+          {
+            currentPageResults &&
+            currentPageResults.length > 0
+              ? (
+                currentPageResults.map(({ name }) => (
+                  <SinglePokemonCard
+                    key={name}
+                    name={name}
+                  />
+                ))
+              )
+              : (
+                <div>
+                  <h3>No Pokemon found. Type something different.</h3>
+                  <img src={noPokemonFound} className='no-pokemon__img'/>
+                </div>
+              )
+            }
+        </ul>
+      </div>
       <Pagination />
     </section>
   );

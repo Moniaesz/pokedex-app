@@ -36,7 +36,7 @@ const SinglePokemonCard = ({ name }) => {
         {
           pokemonCache[name]  &&
             <Link
-              to={`/pokemons-list/${name}`}
+              to={`/pokemon-page/${name}`}
               className='btn single-pokemon__btn'
             >
               details

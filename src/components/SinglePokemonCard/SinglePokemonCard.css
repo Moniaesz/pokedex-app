@@ -7,6 +7,7 @@
   padding: 1.5rem;
   width: 12rem;
   height: 16rem;
+  background: #fff;
 }
 .single-pokemon__img {
   max-height: 8rem;
@@ -15,7 +16,8 @@
 }
 .single-pokemon__btn {
   width: fit-content;
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
 }
 .single-pokemon__name {
   font-family: 'Permanent Marker', cursive;

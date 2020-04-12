@@ -1,11 +1,29 @@
+.pokemons__page {
+  z-index: 2;
+}
+.pokemons-names__wrapper {
+  max-width: 80rem;
+  margin: auto;
+}
 .pokemons-names__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto 4rem;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+.pokemons-names__list::before {
+  content: "";
+  background: #FFD924;
+  height: 15rem;
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
 }
 .pokemons-names__item {
-  margin: 0.8rem;
+  margin: 3rem 0.8rem 0.8rem 0.8rem;
+  border-radius: 15px;
 }
 .no-pokemon__img {
   height: 15rem;
