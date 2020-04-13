@@ -1,0 +1,42 @@
+.pokemon-details {
+  margin-top: 2rem;
+}
+.go-back-pokemon-page {
+  border-bottom: 4px solid rgba(255, 218, 36, 0.281);
+  padding: 1rem;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+}
+.go-back-pokemon-page:hover {
+  padding-bottom: 0.5rem;
+  background: rgba(255, 218, 36, 0.787);
+  border-bottom: 4px solid rgba(255, 218, 36, 0.787);
+}
+
+/* LOADING */
+.loading {
+  margin-top: 4rem;
+}
+.loading__heading {
+  margin: 4rem auto 2rem auto;
+}
+.loading-spinner {
+  height: 5rem;
+  animation: rotating 02s infinite linear;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .pokemon-details {
+    margin-top: 4rem;
+  }
+}

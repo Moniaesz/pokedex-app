@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import PokemonPage from './components/PokemonPage/PokemonPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PokemonContextProvider from './contexts/PokemonContext';
+import PokemonDetails from './components/PokemonDetails/PokemonDetails';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/pokemon-page' component={PokemonPage} />
+              <Route path='/pokemon-page/:pokemonName' component={PokemonDetails} />
               <Route render={() => <p>Not found</p>} />
             </Switch>
           </PokemonContextProvider>
