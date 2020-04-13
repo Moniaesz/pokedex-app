@@ -21,12 +21,3 @@
   width: 100vw;
   z-index: -1;
 }
-.pokemons-names__item {
-  margin: 3rem 0.8rem 0.8rem 0.8rem;
-  border-radius: 15px;
-}
-.no-pokemon__img {
-  height: 15rem;
-  margin: 2rem;
-  margin-right: 0rem;
-}
