@@ -24,12 +24,7 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
         {
           add && (
             <div className={isHovered ? 'add-to-fav-tooltip hovered' : 'add-to-fav-tooltip'}>
-              <h5>add to favourites</h5>
-              <img
-                alt='add to favourites'
-                src={favIcon}
-                className='add-to-fav__tooltip-img'
-              />
+              <h5>{isPokemonFavourite(pokemonName) ? 'remove from favourites' : 'add to favourites'}</h5>
           </div>
           )
         }
