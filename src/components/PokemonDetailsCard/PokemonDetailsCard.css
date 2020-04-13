@@ -75,14 +75,17 @@
 .add-to-fav__tooltip-img {
   height: 2rem;
 }
-.hovered {
-  display: block;
+.delete-icon {
+  height: 4rem;
+  position: absolute;
+  left: 6.5rem;
+  top: 23rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 721px) {
-  .pokemon-details {
-
-  }
   .pokemon-details__card {
     margin: 5rem auto 2rem auto;
   }
@@ -92,5 +95,8 @@
   .add-to-fav-tooltip {
     top: -3rem;
     left: 12rem;
+  }
+  .hovered {
+    display: block;
   }
 }

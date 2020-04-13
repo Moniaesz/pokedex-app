@@ -5,30 +5,35 @@ import favIcon from '../../assets/fav_icon.svg';
 import pokemonTypes from '../../helpers/pokemon-types';
 import './PokemonDetailsCard.css';
 
-const PokemonDetailsCard = ({ pokemonName }) => {
+const PokemonDetailsCard = ({ pokemonName, add }) => {
 
   const [ isHovered, setIsHovered ] = useState(false);
-  const { pokemonCache } = useContext(PokemonContext);
+  const { pokemonCache, isPokemonFavourite,toggleFavourites } = useContext(PokemonContext);
 
   return (
     <div className='pokemon-details__card'>
+    {console.log(`pokemon ${pokemonName} already in fav: ${isPokemonFavourite}`)}
       <div className='add-to-fav__wrapper'>
         <img
           alt='add to favourites'
-          src={addTofavIcon}
+          src={isPokemonFavourite(pokemonName) ? favIcon : addTofavIcon}
           className='add-to-fav__img'
           onMouseOver={() => setIsHovered(true)}
           onMouseOut={() => setIsHovered(false)}
-          onClick={() => {}}
+          onClick={() => toggleFavourites(pokemonName)}
         />
-        <div className={isHovered ? 'add-to-fav-tooltip hovered' : 'add-to-fav-tooltip'}>
-          <h5>add to favourites</h5>
-          <img
-            alt='add to favourites'
-            src={favIcon}
-            className='add-to-fav__tooltip-img'
-          />
-        </div>
+        {
+          add && (
+            <div className={isHovered ? 'add-to-fav-tooltip hovered' : 'add-to-fav-tooltip'}>
+              <h5>add to favourites</h5>
+              <img
+                alt='add to favourites'
+                src={favIcon}
+                className='add-to-fav__tooltip-img'
+              />
+          </div>
+          )
+        }
       </div>
       <img
         alt={pokemonCache[pokemonName].name}
@@ -49,9 +54,6 @@ const PokemonDetailsCard = ({ pokemonName }) => {
             </li>
           )
         })}
-    {/* {pokemonTypes.map(pokemon => (
-      <img src={pokemon.url} className='type-icon'/>
-    ))} */}
     </ul>
   </div>
   )

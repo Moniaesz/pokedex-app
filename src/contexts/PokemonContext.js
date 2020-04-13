@@ -10,8 +10,7 @@ const PokemonContextProvider = (props) => {
   const [ currentPageResults, setCurrentPageResults ] = useState([]);
   const [ allPokemonCount, setAllPokemonCount ] = useState(0);
   const [ nameInputValue, setNameInputValue ] = useState('');
-
-
+  const [ favourites, setFavourites ] = useState([]);
 
   useEffect(() => {
 
@@ -65,6 +64,27 @@ const PokemonContextProvider = (props) => {
     }
   }
 
+  const isPokemonFavourite = (pokemonName) => {
+    const pokemonInFavourites = favourites.find(favourite => favourite === pokemonName)
+    if (pokemonInFavourites) {
+      return true;
+    }
+    if(!pokemonInFavourites) {
+      return false;
+    }
+  }
+
+  const toggleFavourites = (pokemonName) => {
+    if (isPokemonFavourite(pokemonName)) {
+      const updatedFavourites = favourites.filter((favourite => favourite !== pokemonName));
+      setFavourites([...updatedFavourites])
+    }
+    if (!isPokemonFavourite(pokemonName)) {
+      const updatedFavourites = favourites.concat([pokemonName])
+      setFavourites([...updatedFavourites])
+    }
+  }
+
   return (
     <PokemonContext.Provider
       value={{
@@ -77,7 +97,10 @@ const PokemonContextProvider = (props) => {
         updatePokemonResults,
         handleSortFilterChange,
         nameInputValue,
-        setNameInputValue
+        setNameInputValue,
+        favourites,
+        isPokemonFavourite,
+        toggleFavourites
 
       }}
     >

@@ -31,7 +31,7 @@ const PokemonDetails = ({ match }) => {
       <Link to='/pokemon-page' className='go-back-pokemon-page'>Go back to POKEMON page</Link>
       {pokemonCache[pokemonName]
        ?
-        <PokemonDetailsCard pokemonName={pokemonName}/>
+        <PokemonDetailsCard pokemonName={pokemonName} add={true} />
         :
           <div className='loading'>
             <h4 className='loading__heading'>Loading Pokemons details...</h4>
