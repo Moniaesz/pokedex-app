@@ -24,7 +24,7 @@ const PokemonContextProvider = (props) => {
 
   }, [currentPage, limitValue]);
 
-
+  // update current Pokemon list on page change
   const updatePokemonResults = (direction) => {
     setCurrentPage((c) => {
       if (direction === 'prev') {
@@ -44,7 +44,7 @@ const PokemonContextProvider = (props) => {
     });
   }
 
-  // sorting Pokemon
+  // sort Pokemon
   const sortAZ= () => {
     const sortedAZ = currentPageResults.sort((a, b) => a.name > b.name ? 1 : -1);
     setCurrentPageResults([...sortedAZ]);
@@ -64,6 +64,7 @@ const PokemonContextProvider = (props) => {
     }
   }
 
+  // check if Pokemon is already favourite
   const isPokemonFavourite = (pokemonName) => {
     const pokemonInFavourites = favourites.find(favourite => favourite === pokemonName)
     if (pokemonInFavourites) {
@@ -74,6 +75,7 @@ const PokemonContextProvider = (props) => {
     }
   }
 
+  // add Pokemon to/remove from favourites
   const toggleFavourites = (pokemonName) => {
     if (isPokemonFavourite(pokemonName)) {
       const updatedFavourites = favourites.filter((favourite => favourite !== pokemonName));

@@ -12,7 +12,6 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
 
   return (
     <div className='pokemon-details__card'>
-    {console.log(`pokemon ${pokemonName} already in fav: ${isPokemonFavourite}`)}
       <div className='add-to-fav__wrapper'>
         <img
           alt='add to favourites'
