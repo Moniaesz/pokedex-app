@@ -1,4 +1,4 @@
-import React, { useContext, useState , useEffect } from 'react';
+import React, { useContext } from 'react';
 import { PokemonContext } from '../../contexts/PokemonContext';
 import searchIcon from '../../assets/search-color.svg';
 import './FilterPokemonName.css';
