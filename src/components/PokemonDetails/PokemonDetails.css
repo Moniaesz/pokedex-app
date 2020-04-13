@@ -1,5 +1,5 @@
 .pokemon-details {
-  margin-top: 2rem;
+  padding-top: 6.5rem;
 }
 .go-back-pokemon-page {
   border-bottom: 4px solid rgba(255, 218, 36, 0.281);
@@ -37,6 +37,6 @@
 
 @media screen and (min-width: 721px) {
   .pokemon-details {
-    margin-top: 4rem;
+    padding-top: 8.5rem;
   }
 }

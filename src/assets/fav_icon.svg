@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="508" height="508" viewBox="0 0 508 508">
+  <g id="fav_icon" transform="translate(-591 -166)">
+    <circle id="Ellipse_12" data-name="Ellipse 12" cx="254" cy="254" r="254" transform="translate(591 166)" fill="#fff"/>
+    <g id="heart" transform="translate(669.001 286)">
+      <path id="Path_99" data-name="Path 99" d="M148.123,270.372a9.669,9.669,0,0,0,13.8,0L285.849,144.8C337.531,92.448,300.807,2,227.307,2c-44.139,0-64.393,32.436-72.286,38.494C147.09,34.41,126.965,2,82.735,2,9.468,2-27.709,92.215,24.206,144.8Z" transform="translate(21 14)" fill="#e63950"/>
+    </g>
+  </g>
+</svg>

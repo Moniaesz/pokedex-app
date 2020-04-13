@@ -3,12 +3,14 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding-top: 6rem;
 }
 
 @media screen and (min-width: 772px) {
   .filter-pokemon {
     max-width: 60rem;
     flex-direction: row;
+    padding-top: 8rem;
   }
 }

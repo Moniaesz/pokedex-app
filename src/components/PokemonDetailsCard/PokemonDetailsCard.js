@@ -1,14 +1,35 @@
-import React , { useContext } from 'react';
+import React , { useContext, useState } from 'react';
 import { PokemonContext } from '../../contexts/PokemonContext';
+import addTofavIcon from '../../assets/add_to_fav_icon.svg';
+import favIcon from '../../assets/fav_icon.svg';
 import pokemonTypes from '../../helpers/pokemon-types';
 import './PokemonDetailsCard.css';
 
 const PokemonDetailsCard = ({ pokemonName }) => {
+
+  const [ isHovered, setIsHovered ] = useState(false);
   const { pokemonCache } = useContext(PokemonContext);
 
   return (
     <div className='pokemon-details__card'>
-      {pokemonName}
+      <div className='add-to-fav__wrapper'>
+        <img
+          alt='add to favourites'
+          src={addTofavIcon}
+          className='add-to-fav__img'
+          onMouseOver={() => setIsHovered(true)}
+          onMouseOut={() => setIsHovered(false)}
+          onClick={() => {}}
+        />
+        <div className={isHovered ? 'add-to-fav-tooltip hovered' : 'add-to-fav-tooltip'}>
+          <h5>add to favourites</h5>
+          <img
+            alt='add to favourites'
+            src={favIcon}
+            className='add-to-fav__tooltip-img'
+          />
+        </div>
+      </div>
       <img
         alt={pokemonCache[pokemonName].name}
         src={pokemonCache[pokemonName].sprites.front_default} className='pokemon-details__img'
