@@ -1,0 +1,20 @@
+.loading {
+  margin-top: 4rem;
+}
+.loading__heading {
+  margin: 4rem auto 2rem auto;
+}
+.loading-spinner {
+  height: 5rem;
+  animation: rotating 02s infinite linear;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,7 +1,7 @@
 import React , { useContext, useState, useEffect } from 'react';
 import { PokemonContext } from '../../contexts/PokemonContext';
+import Loading from '../Loading/Loading';
 import addTofavIcon from '../../assets/add_to_fav_icon.svg';
-import loadingIcon from '../../assets/loading.svg';
 import favIcon from '../../assets/fav_icon.svg';
 import pokemonTypes from '../../helpers/pokemon-types';
 import './PokemonDetailsCard.css';
@@ -69,11 +69,7 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
           })}
         </ul>
       </>
-
-      : <div className='loading'>
-          <h4 className='loading__heading'>Loading Pokemons details...</h4>
-          <img alt='loading spinner' src={loadingIcon} className='loading-spinner'/>
-        </div>
+      : <Loading />
     }
   </div>
   )

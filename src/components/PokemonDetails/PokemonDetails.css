@@ -13,28 +13,6 @@
   border-bottom: 4px solid rgba(255, 218, 36, 0.787);
 }
 
-/* LOADING */
-.loading {
-  margin-top: 4rem;
-}
-.loading__heading {
-  margin: 4rem auto 2rem auto;
-}
-.loading-spinner {
-  height: 5rem;
-  animation: rotating 02s infinite linear;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media screen and (min-width: 721px) {
   .pokemon-details {
     padding-top: 8.5rem;
