@@ -10,7 +10,11 @@ const PokemonContextProvider = (props) => {
   const [ currentPageResults, setCurrentPageResults ] = useState([]);
   const [ allPokemonCount, setAllPokemonCount ] = useState(0);
   const [ nameInputValue, setNameInputValue ] = useState('');
-  const [ favourites, setFavourites ] = useState([]);
+  const favouritesFromLocalStorage = JSON.parse(localStorage.getItem('favourites'));
+  const [ favourites, setFavourites ] = useState(favouritesFromLocalStorage === null ? [] : favouritesFromLocalStorage);
+
+
+  // console.log('fav local st', favouritesFromLocalStorage)
 
   useEffect(() => {
 
@@ -43,6 +47,11 @@ const PokemonContextProvider = (props) => {
       }
     });
   }
+
+  // add favourite Pokemon names to localStorage
+  useEffect(() => {
+    localStorage.setItem('favourites', JSON.stringify(favourites))
+  }, [favourites])
 
   // sort Pokemon
   const sortAZ= () => {
