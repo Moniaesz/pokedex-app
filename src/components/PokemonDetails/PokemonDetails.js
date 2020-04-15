@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './PokemonDetails.css';
 import { Link } from 'react-router-dom';
 import PokemonDetailsCard from '../PokemonDetailsCard/PokemonDetailsCard';

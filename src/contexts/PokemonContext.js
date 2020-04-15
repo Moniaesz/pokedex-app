@@ -10,13 +10,14 @@ const PokemonContextProvider = (props) => {
   const [ currentPageResults, setCurrentPageResults ] = useState([]);
   const [ allPokemonCount, setAllPokemonCount ] = useState(0);
   const [ nameInputValue, setNameInputValue ] = useState('');
+  const [ currentPokemonTypes, setCurrentPokemonTypes ] = useState([]);
+  const [ chosenPokemonType, setChosenPokemonType ] = useState('');
   const favouritesFromLocalStorage = JSON.parse(localStorage.getItem('favourites'));
   const [ favourites, setFavourites ] = useState(favouritesFromLocalStorage === null ? [] : favouritesFromLocalStorage);
 
-
-  // console.log('fav local st', favouritesFromLocalStorage)
-
   useEffect(() => {
+    setCurrentPokemonTypes([]);
+    setChosenPokemonType('');
 
     fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limitValue}&offset=${limitValue * (currentPage - 1)}`)
       .then(res => res.json())
@@ -111,7 +112,11 @@ const PokemonContextProvider = (props) => {
         setNameInputValue,
         favourites,
         isPokemonFavourite,
-        toggleFavourites
+        toggleFavourites,
+        currentPokemonTypes,
+        setCurrentPokemonTypes,
+        chosenPokemonType,
+        setChosenPokemonType
 
       }}
     >

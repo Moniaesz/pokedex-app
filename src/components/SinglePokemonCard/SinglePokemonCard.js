@@ -9,7 +9,7 @@ import pokemonTypes from  '../../helpers/pokemon-types';
 
 const SinglePokemonCard = ({ name }) => {
 
-  const { pokemonCache, setPokemonCache, isPokemonFavourite, toggleFavourites } = useContext(PokemonContext);
+  const { pokemonCache, setPokemonCache, isPokemonFavourite, toggleFavourites, setCurrentPokemonTypes, currentPageResults } = useContext(PokemonContext);
 
   useEffect(() => {
     if (!pokemonCache[name]) {
@@ -17,15 +17,21 @@ const SinglePokemonCard = ({ name }) => {
       .then(res => res.json())
       .then(pokemonDescription => {
         setPokemonCache((prevDetails) => ({
-            ...prevDetails,
-            [name]: pokemonDescription
-          }))
+          ...prevDetails,
+          [name]: pokemonDescription
+        }))
+        pokemonDescription.types.map(({ type }) => (setCurrentPokemonTypes((prevTypes => [...new Set([...prevTypes, type.name])]))
+        ))
         })
         .catch((err) => {
             console.log('fetching pokemon details error', err)
         });
+    } else {
+      pokemonCache[name].types.map(({ type }) => (
+        setCurrentPokemonTypes((prevTypes => [...new Set([...prevTypes, type.name])]))
+      ))
     }
-  }, [name]);
+  }, [currentPageResults]);
 
   return (
     <li className='pokemons-names__item'>

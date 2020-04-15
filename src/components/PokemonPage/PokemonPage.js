@@ -8,16 +8,32 @@ import FilterSection from '../FilterSection/FilterSection';
 
 const PokemonPage = () => {
 
-  const { currentPageResults, nameInputValue } = useContext(PokemonContext);
+  const { currentPageResults, nameInputValue, chosenPokemonType, pokemonCache } = useContext(PokemonContext);
 
-  let filteredPokemon = [];
+  const filterByType = (currentPageResults, chosenPokemonType) => {
+    if (chosenPokemonType === '') {
+      return currentPageResults;
+    }
+    let filteredCurrentPageResult = [];
+    for (let i = 0; i < currentPageResults.length; i++) {
+      let pokemonName = currentPageResults[i].name;
 
-  if (nameInputValue === '') {
-    filteredPokemon = currentPageResults;
+      let pokemon = pokemonCache[pokemonName];
+      if (pokemonCache[pokemonName]) {
+        let pokemonType = pokemon.types.map(({type}) => type.name);
+        if (pokemonType.includes(chosenPokemonType)) {
+          filteredCurrentPageResult.push(currentPageResults[i])
+        }
+      }
+    }
+    return filteredCurrentPageResult;
   }
-  if (nameInputValue) {
-    filteredPokemon = currentPageResults.filter(pokemon => pokemon.name.toLowerCase().includes(nameInputValue.toLowerCase()))
-  }
+
+  let filteredByName = [];
+
+    filteredByName = currentPageResults.filter(pokemon => pokemon.name.toLowerCase().includes(nameInputValue.toLowerCase()));
+
+    const filteredByType = filterByType(filteredByName, chosenPokemonType);
 
   return (
     <section className='pokemons__page'>
@@ -26,10 +42,10 @@ const PokemonPage = () => {
       <div className='pokemons-names__wrapper'>
         <ul className='pokemons-names__list'>
           {
-            filteredPokemon &&
-            filteredPokemon.length > 0
+            filteredByType &&
+            filteredByType.length > 0
               ? (
-                filteredPokemon.map(({ name }) => (
+                filteredByType.map(({ name }) => (
                   <SinglePokemonCard
                     key={name}
                     name={name}
