@@ -11,7 +11,7 @@ const PokemonPage = () => {
   const { currentPageResults, nameInputValue, chosenPokemonType, pokemonCache } = useContext(PokemonContext);
 
   const filterByType = (currentPageResults, chosenPokemonType) => {
-    if (chosenPokemonType === '') {
+    if (chosenPokemonType === '' || chosenPokemonType === 'all') {
       return currentPageResults;
     }
     let filteredCurrentPageResult = [];
