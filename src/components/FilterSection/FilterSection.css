@@ -1,13 +1,14 @@
 .filter-pokemon {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin: 0 auto;
-  padding-top: 6rem;
+  padding-top: 5rem;
 }
 
-@media screen and (min-width: 772px) {
+@media screen and (min-width: 976px) {
   .filter-pokemon {
     max-width: 60rem;
     flex-direction: row;

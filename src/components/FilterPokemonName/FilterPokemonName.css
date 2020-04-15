@@ -1,5 +1,5 @@
 .filter-pokemon-name {
-  margin-top: 1.5rem;
+  margin: 1rem 0.6rem 0.6rem 0.6rem;
 }
 .search-pokemon__form {
   display: flex;
@@ -11,7 +11,7 @@
   margin: 0 auto;
   background: #F8F8F8;
   width: 15rem;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 10px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
@@ -29,15 +29,22 @@
 .search-icon {
   height: 1.2rem;
   position: absolute;
-  left: 3.2rem;
-  bottom: 1.8rem;
+  left: 2.2rem;
+  bottom: 1.3rem;
 }
 .search-icon-type {
   top: 15rem;
 }
 
-@media screen and (min-width: 772px) {
+@media screen and (min-width: 976px) {
   .filter-pokemon-name {
     margin-top: auto;
+  }
+  .search-pokemon__form {
+    padding: 1.5rem;
+  }
+  .search-icon {
+    left: 3.2rem;
+    bottom: 1.8rem;
   }
 }

@@ -11,7 +11,7 @@ const FilterPokemonName = () => {
   return (
     <div className='filter-pokemon-name'>
       <form className='search-pokemon__form'>
-      <h3>BROWSE BY NAME</h3>
+      <h3 className='sort-title'>BROWSE BY NAME</h3>
         <div>
           <img alt='search Pokemon by name' src={searchIcon} className='search-icon'/>
         </div>

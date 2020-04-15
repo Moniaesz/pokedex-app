@@ -8,7 +8,7 @@ const SortPokemon = () => {
 
   return (
     <div className='sort-pokemon'>
-      <h3>SORT</h3>
+      <h3 className='sort-title'>SORT</h3>
       <select onChange={(e) => handleSortFilterChange(e.target.value)} className='sort-pokemon__select'>
         <option value="" hidden>choose sort filter</option>
         <option value='a-z'>by name [A-Z]</option>
