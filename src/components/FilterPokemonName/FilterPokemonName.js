@@ -11,20 +11,20 @@ const FilterPokemonName = () => {
   return (
     <div className='filter-pokemon-name'>
       <form className='search-pokemon__form'>
-      <h3 className='sort-title'>BROWSE BY NAME</h3>
+      {/* <h3 className='sort-title'></h3> */}
         <div>
           <img alt='search Pokemon by name' src={searchIcon} className='search-icon'/>
         </div>
-        <label htmlFor='pokemon-name'>
-          <input
-            type='search'
-            placeholder='type Pokemon name'
-            value={nameInputValue}
-            onChange={(e) => setNameInputValue(e.target.value)}
-            className='search-pokemon__input'
-            id='pokemon-name'
-          />
-        </label>
+        <label htmlFor='pokemon-name' className='sort-title'>BROWSE BY NAME</label>
+        <input
+          type='search'
+          placeholder='type Pokemon name'
+          value={nameInputValue}
+          onChange={(e) => setNameInputValue(e.target.value)}
+          className='search-pokemon__input'
+          id='pokemon-name'
+          name='pokemon-name'
+        />
       </form>
     </div>
   )

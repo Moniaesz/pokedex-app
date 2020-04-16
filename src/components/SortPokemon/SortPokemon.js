@@ -8,8 +8,18 @@ const SortPokemon = () => {
 
   return (
     <div className='sort-pokemon'>
-      <h3 className='sort-title'>SORT</h3>
-      <select onChange={(e) => handleSortFilterChange(e.target.value)} className='sort-pokemon__select'>
+      <label
+          htmlFor='sort'
+          className='sort-title'
+        >
+          SORT
+      </label>
+      <select
+        id='sort'
+        name='sort'
+        onChange={(e) => handleSortFilterChange(e.target.value)}
+        className='sort-pokemon__select'
+      >
         <option value="" hidden>choose sort filter</option>
         <option value='a-z'>by name [A-Z]</option>
         <option value='z-a'>by name [Z-A]</option>
