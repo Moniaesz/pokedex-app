@@ -3,11 +3,12 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import PokemonPage from './components/PokemonPage/PokemonPage';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import PokemonContextProvider from './contexts/PokemonContext';
 import PokemonDetails from './components/PokemonDetails/PokemonDetails';
 import Favourites from './components/Favourites/Favourites';
 import Page404 from './components/Page404/Page404';
+import PokemonContextProvider from './contexts/PokemonContext';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { routes } from './helpers/routes';
 
 function App() {
   return (
@@ -17,19 +18,19 @@ function App() {
           <PokemonContextProvider>
             <Switch>
               <Route
-                exact path='/'
+                exact path={routes.root}
                 component={Home}
               />
               <Route
-                exact path='/pokemon-page'
+                exact path={routes.pokemon}
                 component={PokemonPage}
               />
               <Route
-                path='/pokemon-page/:pokemonName'
+                path={routes.details}
                 component={PokemonDetails}
               />
               <Route
-                path='/favourites'
+                path={routes.favourites}
                 component={Favourites}
               />
               <Route component={Page404} />
