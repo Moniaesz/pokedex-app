@@ -5,7 +5,6 @@ export const PokemonContext = createContext();
 const PokemonContextProvider = (props) => {
 
   const [ pokemonCache, setPokemonCache ] = useState({});
-  const [ limitValue, setLimitValue ] = useState(10);
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ currentPageResults, setCurrentPageResults ] = useState([]);
   const [ allPokemonCount, setAllPokemonCount ] = useState(0);
@@ -14,6 +13,7 @@ const PokemonContextProvider = (props) => {
   const [ chosenPokemonType, setChosenPokemonType ] = useState('');
   const favouritesFromLocalStorage = JSON.parse(localStorage.getItem('favourites'));
   const [ favourites, setFavourites ] = useState(favouritesFromLocalStorage === null ? [] : favouritesFromLocalStorage);
+  const limitValue = 10;
 
   useEffect(() => {
     setCurrentPokemonTypes([]);
@@ -117,7 +117,6 @@ const PokemonContextProvider = (props) => {
         setCurrentPokemonTypes,
         chosenPokemonType,
         setChosenPokemonType
-
       }}
     >
       {props.children}
