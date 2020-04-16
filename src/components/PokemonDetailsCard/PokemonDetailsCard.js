@@ -50,7 +50,8 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
         </div>
         <img
           alt={pokemonCache[pokemonName].name}
-          src={pokemonCache[pokemonName].sprites.front_default} className='pokemon-details__img'
+          src={pokemonCache[pokemonName].sprites.front_default}
+          className='pokemon-details__img'
         />
         <h3 className='pokemon-details__name'>{pokemonCache[pokemonName].name}</h3>
         <p>weight: {pokemonCache[pokemonName].weight}</p>
@@ -63,7 +64,11 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
             return (
               <li key={type.name}>
                 <h6>{type.name}</h6>
-                <img alt={type.name} src={typeIcon.url} className='type-icon'/>
+                <img
+                  alt={type.name}
+                  src={typeIcon.url}
+                  className='type-icon'
+                />
               </li>
             )
           })}

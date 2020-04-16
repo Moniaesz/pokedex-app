@@ -22,7 +22,12 @@ const FilterPokemonType = () => {
         <option value="" hidden>choose Pokemon type</option>
         <option value="all" >all</option>
         {currentPokemonTypes.map((type, id) => (
-          <option key={id} value={type}>{type}</option>
+          <option
+            key={id}
+            value={type}
+          >
+            {type}
+          </option>
         )) }
       </select>
     </div>

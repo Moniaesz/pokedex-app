@@ -15,7 +15,10 @@ const Favourites = () => {
           favourites.length > 0
             &&
             favourites.map(fav => (
-            <PokemonDetailsCard pokemonName={fav} key={fav}/>
+            <PokemonDetailsCard
+              pokemonName={fav}
+              key={fav}
+            />
           ))
         }
       </ul>

@@ -57,7 +57,11 @@ const SinglePokemonCard = ({ name }) => {
               const typeIcon = pokemonTypes.find((pokemon) => pokemon.type === type.name);
               return (
                 <li key={type.name}>
-                  <img alt={type.name} src={typeIcon.url} className='type-icon'/>
+                  <img
+                    alt={type.name}
+                    src={typeIcon.url}
+                    className='type-icon'
+                  />
                 </li>
               )
             })}

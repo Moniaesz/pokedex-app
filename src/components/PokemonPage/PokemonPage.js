@@ -55,7 +55,11 @@ const PokemonPage = () => {
               : (
                 <div>
                   <h3>No Pokemon found. Type something different.</h3>
-                  <img src={noPokemonFound} className='no-pokemon__img' alt='no Pokemon found'/>
+                  <img
+                    src={noPokemonFound}
+                    className='no-pokemon__img'
+                    alt='no Pokemon found'
+                  />
                 </div>
               )
             }
