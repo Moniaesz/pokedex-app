@@ -12,9 +12,18 @@ const Home = () => {
     >
       <div className='homepage__content'>
         <h2>Welcome to POKEDEX</h2>
-        <img src={pokemonAvatar} alt='pokemon avatar'/>
+        <img
+          src={pokemonAvatar}
+          alt='pokemon avatar'
+          className='pokemon-avatar'
+        />
         <p className='homepage__content__description'>Browse through all Pokemon, find out details about each one and save your favourite ones!</p>
-        <Link to='/pokemon-page' className='find-pokemon__btn'>Find Pokemon</Link>
+        <Link
+          to='/pokemon-page'
+          className='find-pokemon__btn'
+        >
+          Find Pokemon
+        </Link>
       </div>
     </section>
   )

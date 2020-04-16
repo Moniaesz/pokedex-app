@@ -17,27 +17,52 @@
   max-width: 20rem;
   height: 25rem;
 }
+.pokemon-avatar {
+  height: 7rem;
+}
 .homepage__content__description:before {
   content: "";
-  height: 5px;
+  height: 3px;
   background: #fff;
   width: 17rem;
   position: absolute;
   border-radius: 10px;
-  top: 15rem;
+  top: 13.5rem;
   left: 1.5rem;
 }
 .homepage__content__description {
   margin-top: 4rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  font-weight: 300;
 }
 .find-pokemon__btn {
-  background: #E63950;
-  border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 20px;
+  background: transparent;
+  border: 3px solid #E63950;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
   color: #fff;
   font-family: inherit;
   font-size: 1.2rem;
   cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.find-pokemon__btn:hover {
+  background: #E63950;
+}
+
+@media screen and (min-width: 595px) {
+  .homepage__content {
+    height: 30rem;
+  }
+  .pokemon-avatar {
+    height: 9rem;
+  }
+  .homepage__content__description {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+  }
+  .homepage__content__description:before {
+    top: 17rem;
+  }
 }
