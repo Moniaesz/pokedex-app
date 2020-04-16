@@ -1,0 +1,13 @@
+.not-found {
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.not-found .go-back-pokemon-page {
+  margin-top: 2rem;
+}
+.not-found__img {
+  margin-top: 4rem;
+  height: 8rem;
+}
