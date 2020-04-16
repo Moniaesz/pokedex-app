@@ -20,7 +20,7 @@ const SortPokemon = () => {
         onChange={(e) => handleSortFilterChange(e.target.value)}
         className='sort-pokemon__select'
       >
-        <option value="" hidden>choose sort filter</option>
+        <option value="" hidden>choose filter</option>
         <option value='a-z'>by name [A-Z]</option>
         <option value='z-a'>by name [Z-A]</option>
       </select>

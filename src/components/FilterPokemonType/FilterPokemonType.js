@@ -19,7 +19,7 @@ const FilterPokemonType = () => {
         onChange={(e) => setChosenPokemonType(e.target.value)}
         className='sort-pokemon__select'
       >
-        <option value="" hidden>choose Pokemon type</option>
+        <option value="" hidden>choose type</option>
         <option value="all" >all</option>
         {currentPokemonTypes.map((type, id) => (
           <option

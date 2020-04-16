@@ -7,17 +7,21 @@
 }
 .pagination__heading {
   margin: 0 1rem;
+  font-size: 1.1rem;
 }
 .pagination__current-page {
   color: #e63950;
   font-weight: bold;
 }
 .pagination__btn {
-  width: 3rem;
+  width: 2.5rem;
   cursor: pointer;
 }
 @media screen and (min-width: 976px) {
   .pagination {
     margin: 2rem auto 2rem auto;
+  }
+  .pagination__btn {
+    width: 3rem;
   }
 }

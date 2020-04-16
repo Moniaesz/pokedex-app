@@ -7,8 +7,8 @@ import FilterPokemonType from '../FilterPokemonType/FilterPokemonType';
 const FilterSection = () => (
   <section className='filter-pokemon'>
     <SortPokemon />
-    <FilterPokemonName />
     <FilterPokemonType />
+    <FilterPokemonName />
   </section>
 );
 
