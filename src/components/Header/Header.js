@@ -9,7 +9,13 @@ const Header = () => (
   <header className='header'>
     <div className='app-name'>
       <h1 className='app-name__heading'>POKEDEX APP</h1>
-      <img src={pokemonPlaceholder} alt='pokedex app logo' className='app-logo'/>
+      <Link to='/'>
+        <img
+          src={pokemonPlaceholder}
+          alt='pokedex app logo'
+          className='app-logo'
+        />
+      </Link>
     </div>
     <nav className='nav'>
       <ul className='nav__list'>
