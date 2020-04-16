@@ -9,6 +9,7 @@ App make use of:
 * Context API
 * React Router v.4
 * localStorage
+* PWA
 * custom styling (flexbox)
 
 #### Designed in AdobeXD
