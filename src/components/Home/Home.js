@@ -3,6 +3,7 @@ import './Home.css';
 import heroImg from '../../assets/hero-img.jpg';
 import pokemonAvatar from '../../assets/pokemon-avatar.svg';
 import { Link } from 'react-router-dom';
+import { routes } from '../../helpers/routes';
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
         />
         <p className='homepage__content__description'>Browse through all Pokemon, find out details about each one and save your favourite ones!</p>
         <Link
-          to='/pokemon-page'
+          to={routes.pokemon}
           className='find-pokemon__btn'
         >
           Find Pokemon

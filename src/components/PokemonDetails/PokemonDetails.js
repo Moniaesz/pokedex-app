@@ -1,7 +1,8 @@
 import React from 'react';
+import PokemonDetailsCard from '../PokemonDetailsCard/PokemonDetailsCard';
 import './PokemonDetails.css';
 import { Link } from 'react-router-dom';
-import PokemonDetailsCard from '../PokemonDetailsCard/PokemonDetailsCard';
+import { routes } from '../../helpers/routes';
 
 const PokemonDetails = ({ match }) => {
 
@@ -9,7 +10,12 @@ const PokemonDetails = ({ match }) => {
 
   return (
     <section className='pokemon-details'>
-      <Link to='/pokemon-page' className='go-back-pokemon-page'>Go back to POKEMON page</Link>
+      <Link
+        to={routes.pokemon}
+        className='go-back-pokemon-page'
+      >
+        Go back to POKEMON page
+      </Link>
       <PokemonDetailsCard pokemonName={pokemonName} add={true} />
     </section>
   )

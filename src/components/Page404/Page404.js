@@ -2,6 +2,7 @@ import React from 'react';
 import notFoundIcon from '../../assets/not-found.svg';
 import './Page404.css';
 import { Link } from 'react-router-dom';
+import { routes } from '../../helpers/routes';
 
 const Page404 = () => {
   return (
@@ -13,7 +14,7 @@ const Page404 = () => {
         src={notFoundIcon}
       />
       <Link
-        to='/pokemon-page'
+        to={routes.pokemon}
         className='go-back-pokemon-page'
       >
         Go back to POKEMON page
