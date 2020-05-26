@@ -17,7 +17,6 @@ const PokemonContextProvider = (props) => {
 
   useEffect(() => {
     setCurrentPokemonTypes([]);
-    setChosenPokemonType('');
 
     fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limitValue}&offset=${limitValue * (currentPage - 1)}`)
       .then(res => res.json())
@@ -31,6 +30,7 @@ const PokemonContextProvider = (props) => {
 
   // update current Pokemon list on page change
   const updatePokemonResults = (direction) => {
+    setChosenPokemonType('all');
     setCurrentPage((c) => {
       if (direction === 'prev') {
         const firstPage = 1;
