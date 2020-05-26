@@ -10,7 +10,7 @@
   font-size: 1.1rem;
 }
 .pagination__current-page {
-  color: #e63950;
+  color: var(--pokemon-red);
   font-weight: bold;
 }
 .pagination__btn {

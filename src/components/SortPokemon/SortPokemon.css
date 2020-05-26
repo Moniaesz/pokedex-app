@@ -1,9 +1,9 @@
 .sort-pokemon {
-  background: #F8F8F8;
+  background: var(--light-grey-bg);
   width: 9rem;
   padding: 0.6rem;
-  border-radius: 10px;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow-blur);
   align-self: center;
   margin: 1rem 0.6rem 0.6rem 0.6rem;
   display: flex;
@@ -13,9 +13,9 @@
   font-family: inherit;
   font-size: 1rem;
   border: none;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: var(--box-shadow-subtle);
   padding: 0.4rem 0.6rem;
-  border-radius: 50px;
+  border-radius: var(--border-radius-medium);
   margin-top: 1rem;
   background: #fff;
 }

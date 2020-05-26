@@ -15,7 +15,7 @@
 }
 .pokemons-names__list::before {
   content: "";
-  background: #FFD924;
+  background: var(--vivid-yellow);
   height: 15rem;
   position: absolute;
   width: 100vw;

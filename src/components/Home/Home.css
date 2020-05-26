@@ -26,7 +26,7 @@
   background: #fff;
   width: 17rem;
   position: absolute;
-  border-radius: 10px;
+  border-radius: var(--border-radius-small);
   top: 13.5rem;
   left: 1.5rem;
 }
@@ -38,9 +38,9 @@
 }
 .find-pokemon__btn {
   background: transparent;
-  border: 3px solid #E63950;
+  border: 3px solid var(--pokemon-red);
   padding: 0.6rem 1.2rem;
-  border-radius: 5px;
+  border-radius: var(--border-radius-small);
   color: #fff;
   font-family: inherit;
   font-size: 1.2rem;
@@ -48,7 +48,7 @@
   transition: 0.1s ease-in-out;
 }
 .find-pokemon__btn:hover {
-  background: #E63950;
+  background: var(--pokemon-red);
 }
 
 @media screen and (min-width: 595px) {

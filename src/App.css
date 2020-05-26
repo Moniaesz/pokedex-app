@@ -1,3 +1,20 @@
+/* --- CSS variables ---  */
+:root {
+  /* colors */
+  --pokemon-red: #e63950;
+  --light-grey-bg: #f8f8f8;
+  --vivid-yellow: #FFD924;
+  /* box-shadow */
+  --box-shadow-subtle: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --box-shadow-blur: 0px 3px 15px rgba(0,0,0,0.2);
+    /* border-radius */
+  --border-radius-half: 50%;
+  --border-radius-small: 5px;
+  --border-radius-medium: 15px;
+  --border-radius-large: 30px;
+  --border-radius-huge: 50px;
+}
+/* --- common styles ---  */
 .App {
   text-align: center;
   font-family: 'Lato', sans-serif;
@@ -12,7 +29,7 @@ a {
 }
 .btn {
   background: rgb(82, 82, 82);
-  border-radius: 15px;
+  border-radius: var(--border-radius-small);
   border: none;
   color: #fff;
   transition: 0.2s ease-in;
@@ -20,3 +37,4 @@ a {
 .btn:hover {
   background: #000;
 }
+
