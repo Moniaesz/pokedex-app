@@ -6,30 +6,31 @@ import favIcon from '../../assets/fav_icon.svg';
 import { Link } from 'react-router-dom';
 import './SinglePokemonCard.css';
 import pokemonTypes from  '../../helpers/pokemon-types';
+import { fetchSinglePokemonDetails } from '../../utils/api';
 
 const SinglePokemonCard = ({ name }) => {
 
   const { pokemonCache, setPokemonCache, isPokemonFavourite, toggleFavourites, setCurrentPokemonTypes, currentPageResults } = useContext(PokemonContext);
 
+  // get unique types per current page
+  const getUniqueTypes = (types) => {
+    return types.map(({ type }) => (setCurrentPokemonTypes((prevTypes => [...new Set([...prevTypes, type.name])]))
+    ));
+  }
+
   useEffect(() => {
-    if (!pokemonCache[name]) {
-      fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      .then(res => res.json())
-      .then(pokemonDescription => {
-        setPokemonCache((prevDetails) => ({
-          ...prevDetails,
-          [name]: pokemonDescription
-        }))
-        pokemonDescription.types.map(({ type }) => (setCurrentPokemonTypes((prevTypes => [...new Set([...prevTypes, type.name])]))
-        ))
+    if(!pokemonCache[name]) {
+      fetchSinglePokemonDetails(name)
+        .then(pokemonDescription => {
+          setPokemonCache((prevDetails) => ({
+            ...prevDetails,
+            [name]: pokemonDescription
+          }));
+          getUniqueTypes(pokemonDescription.types);
         })
-        .catch((err) => {
-            console.log('fetching pokemon details error', err)
-        });
+        .catch(console.log('fetching error single card'));
     } else {
-      pokemonCache[name].types.map(({ type }) => (
-        setCurrentPokemonTypes((prevTypes => [...new Set([...prevTypes, type.name])]))
-      ))
+      getUniqueTypes(pokemonCache[name].types);
     }
   }, [currentPageResults]);
 

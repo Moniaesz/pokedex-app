@@ -5,6 +5,7 @@ import addTofavIcon from '../../assets/add_to_fav_icon.svg';
 import favIcon from '../../assets/fav_icon.svg';
 import pokemonTypes from '../../helpers/pokemon-types';
 import './PokemonDetailsCard.css';
+import { fetchSinglePokemonDetails } from '../../utils/api';
 
 const PokemonDetailsCard = ({ pokemonName, add }) => {
 
@@ -13,8 +14,7 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
 
   useEffect(() => {
     if (!pokemonCache[pokemonName]) {
-      fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-      .then(res => res.json())
+      fetchSinglePokemonDetails(pokemonName)
       .then(pokemonDescription => {
         setPokemonCache((prevDetails) => ({
             ...prevDetails,
@@ -22,8 +22,8 @@ const PokemonDetailsCard = ({ pokemonName, add }) => {
           }))
         })
         .catch((err) => {
-            console.log('fetching pokemon details error', err)
-        });
+          console.log('fetching pokemon details error', err);
+        })
     }
   }, []);
 
