@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { ErrorsContext } from './ErrorsContext';
 
 export const PokemonContext = createContext();
 
@@ -15,6 +16,8 @@ const PokemonContextProvider = (props) => {
   const [ favourites, setFavourites ] = useState(favouritesFromLocalStorage === null ? [] : favouritesFromLocalStorage);
   const limitValue = 10;
 
+  const { setFetchingError } = useContext(ErrorsContext);
+
   useEffect(() => {
     setCurrentPokemonTypes([]);
 
@@ -24,7 +27,7 @@ const PokemonContextProvider = (props) => {
         setCurrentPageResults(data.results);
         setAllPokemonCount(data.count);
       })
-      .catch((err) => console.log('fetching error', err))
+      .catch(() => setFetchingError(true));
 
   }, [currentPage, limitValue]);
 

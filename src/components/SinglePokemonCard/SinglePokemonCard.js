@@ -1,16 +1,19 @@
 import React, { useContext, useEffect } from 'react';
 import { PokemonContext } from '../../contexts/PokemonContext';
+import { ErrorsContext } from '../../contexts/ErrorsContext';
+import { fetchSinglePokemonDetails } from '../../utils/api';
 import pokemonPlaceholder from '../../assets/pokemon-placeholder.svg';
 import addTofavIcon from '../../assets/add_to_fav_icon.svg';
 import favIcon from '../../assets/fav_icon.svg';
 import { Link } from 'react-router-dom';
 import './SinglePokemonCard.css';
 import pokemonTypes from  '../../helpers/pokemon-types';
-import { fetchSinglePokemonDetails } from '../../utils/api';
 
 const SinglePokemonCard = ({ name }) => {
 
   const { pokemonCache, setPokemonCache, isPokemonFavourite, toggleFavourites, setCurrentPokemonTypes, currentPageResults } = useContext(PokemonContext);
+
+  const { setFetchingError } = useContext(ErrorsContext);
 
   // get unique types per current page
   const getUniqueTypes = (types) => {
@@ -28,7 +31,7 @@ const SinglePokemonCard = ({ name }) => {
           }));
           getUniqueTypes(pokemonDescription.types);
         })
-        .catch(console.log('fetching error single card'));
+        .catch(() => setFetchingError(true));
     } else {
       getUniqueTypes(pokemonCache[name].types);
     }
@@ -77,6 +80,7 @@ const SinglePokemonCard = ({ name }) => {
         </>
       }
     </li>
+
   );
 }
 
