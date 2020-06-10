@@ -1,5 +1,5 @@
-export function fetchSinglePokemonDetails (pokemonName) {
-  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-    .then(res => res.json())
-    .then(singlePokemonDetails => singlePokemonDetails);
+export async function fetchSinglePokemonDetails(pokemonName) {
+  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+  let singlePokemonData = await response.json()
+  return singlePokemonData;
 }
