@@ -34,6 +34,7 @@ const PokemonContextProvider = (props) => {
   // update current Pokemon list on page change
   const updatePokemonResults = (direction) => {
     setChosenPokemonType('all');
+    setNameInputValue('');
     setCurrentPage((c) => {
       if (direction === 'prev') {
         const firstPage = 1;

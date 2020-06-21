@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { PokemonContext } from '../../contexts/PokemonContext';
 import { ErrorsContext } from '../../contexts/ErrorsContext';
 import SinglePokemonCard from '../SinglePokemonCard/SinglePokemonCard';
@@ -10,8 +10,13 @@ import FetchingError from '../FetchingError/FetchingError';
 
 const PokemonPage = () => {
 
-  const { currentPageResults, nameInputValue, chosenPokemonType, pokemonCache } = useContext(PokemonContext);
+  const { currentPageResults, nameInputValue, chosenPokemonType, pokemonCache, setChosenPokemonType, setNameInputValue } = useContext(PokemonContext);
   const { fetchingError } = useContext(ErrorsContext);
+
+  useEffect(() => {
+    setChosenPokemonType('all');
+    setNameInputValue('');
+  }, []);
 
   const filterByType = (currentPageResults, chosenPokemonType) => {
     if (chosenPokemonType === '' || chosenPokemonType === 'all') {
